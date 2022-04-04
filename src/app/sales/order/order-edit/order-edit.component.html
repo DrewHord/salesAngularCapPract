@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">Order Create</span>
+</div>
+<table *ngIf="order" class="table table-sm">
+    <tbody>
+    <tr>
+        <th>Id:</th>        
+           <td><input [(ngModel)]="order.id" type="number" disabled=""></td>
+    </tr>
+    <tr>
+        <th>Description:</th>        
+           <td><input [(ngModel)]="order.description" type="text" ></td>
+    </tr>
+    <tr>
+        <th>Shipped:</th>        
+           <td><input [(ngModel)]="order.shipped" type="checkbox" ></td>
+    </tr>
+    <tr>
+        <th>Total:</th>        
+           <td><input [(ngModel)]="order.total" type="number" ></td>
+    </tr>
+    <tr>
+        <th>Customer:</th>        
+        <td>
+            <select [(ngModel)]="order.customerId">
+                <option *ngFor="let c of customers" value="{{ c.id }}">{{ c.name }}</option>
+            </select> 
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+    
+</div>
+

@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">Order List</span> |
+    <a routerLink="/order/create">New</a>
+</div>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Shipped</th>
+            <th>Total</th>
+            <th>Customer</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of orders">
+            <td>{{ o.id }}</td>
+            <td>{{ o.description}}</td>
+            <td>{{ o.shipped  ? "Yes" : "No" }}</td>
+            <td>{{ o.total }}</td>
+            <td>{{ o.customer.name }}</td>
+            <td>
+                <a routerLink="/order/detail/{{ o.id }}">Detail</a> |
+                <a routerLink="/order/edit/{{ o.id }}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

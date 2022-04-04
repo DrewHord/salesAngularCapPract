@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+input{
+    border-radius: 7px;
+}
+#pageTitle{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: italic;
+}

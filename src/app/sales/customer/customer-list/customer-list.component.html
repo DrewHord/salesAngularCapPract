@@ -1,4 +1,8 @@
 <app-menu></app-menu>
+<div>
+    <span id="pageTitle">Customer List</span> |
+    <a routerLink="/customer/create">New</a>
+</div>
 <table class="table table-sm">
     <thead>
         <tr>
@@ -7,6 +11,8 @@
             <th>Active</th>
             <th>StateCode</th>
             <th>Sales</th>
+            <th>Actions</th>
+
         </tr>
     </thead>
     <tbody>
@@ -16,6 +22,10 @@
             <td>{{ (c.active) ? "Yes" : "No" }}</td>
             <td>{{ c.stateCode }}</td>
             <td>{{ c.sales | currency }}</td>
+            <td>
+                <a routerLink="/customer/detail/{{ c.id }}">Detail</a> |
+                <a routerLink="/customer/edit/{{ c.id }}">Edit</a>
+            </td>
 
         </tr>
     </tbody>

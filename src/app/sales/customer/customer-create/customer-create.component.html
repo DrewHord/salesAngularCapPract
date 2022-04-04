@@ -1,2 +1,30 @@
 <app-menu></app-menu>
-<p>customer-create works!</p>
+<div>
+    <span id="pageTitle">Customer Create</span>
+</div>
+<table *ngIf="customer" class="table table-sm">
+    <tr>
+        <th>Id:</th>        
+           <td><input [(ngModel)]="customer.id" type="number" disabled=""></td>
+    </tr>
+    <tr>
+        <th>Name:</th>        
+           <td><input [(ngModel)]="customer.name" type="text" ></td>
+    </tr>
+    <tr>
+        <th>State:</th>        
+           <td><input [(ngModel)]="customer.stateCode" type="text" ></td>
+    </tr>
+    <tr>
+        <th>Sales:</th>        
+           <td><input [(ngModel)]="customer.sales" type="currency" disabled></td>
+    </tr>
+    <tr>
+        <th>Active:</th>        
+        <td><input [(ngModel)]="customer.active" type="checkbox"></td>
+    </tr>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+    
+</div>
