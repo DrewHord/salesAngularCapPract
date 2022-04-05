@@ -10,6 +10,7 @@ import { CustomerService } from '../customer.service';
 export class CustomerListComponent implements OnInit {
 
 customers: Customer[]= [];
+searchCriteria: string = "";
   constructor(
     private custsvc: CustomerService
   ) { }

@@ -11,6 +11,7 @@ import { OrderCreateComponent } from './sales/order/order-create/order-create.co
 import { OrderDetailComponent } from './sales/order/order-detail/order-detail.component';
 import { OrderEditComponent } from './sales/order/order-edit/order-edit.component';
 import { OrderListComponent } from './sales/order/order-list/order-list.component';
+import { EmployeeLoginComponent } from './sales/employee/employee-login/employee-login.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -26,6 +27,8 @@ const routes: Routes = [
   { path: "order/create", component: OrderCreateComponent},
   { path: "order/detail/:id", component: OrderDetailComponent},
   { path: "order/edit/:id", component: OrderEditComponent},
+  
+  { path: "login", component: EmployeeLoginComponent},
 
 
   {path: "**", component: E404Component}

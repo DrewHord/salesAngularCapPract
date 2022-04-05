@@ -1,7 +1,8 @@
 <app-menu></app-menu>
 <div>
     <span id="pageTitle">Customer List</span> |
-    <a routerLink="/customer/create">New</a>
+    <a routerLink="/customer/create">New</a> |
+    <input [(ngModel)]="searchCriteria" type="text" placeholder="search">
 </div>
 <table class="table table-sm">
     <thead>
@@ -16,10 +17,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let c of customers">
+        <tr *ngFor="let c of customers | customerSearch: searchCriteria ">
             <td>{{ c.id }}</td>
             <td>{{ c.name }}</td>
-            <td>{{ (c.active) ? "Yes" : "No" }}</td>
+            <td>{{ (c.active) | boolDisplay}}</td>
             <td>{{ c.stateCode }}</td>
             <td>{{ c.sales | currency }}</td>
             <td>
